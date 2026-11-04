@@ -180,6 +180,7 @@ export default function App() {
         </button>
         <button
           className="location-pill"
+          aria-label="Delivery area: Jalingo, Taraba"
           onClick={() => notify('Address selection will be connected to your account later')}
         >
           <MapPin size={16} /><span>Jalingo, Taraba</span><ChevronDown size={14} />

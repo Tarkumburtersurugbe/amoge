@@ -1,0 +1,150 @@
+.app-shell {
+  min-height: 100svh;
+}
+
+body {
+  min-width: 0;
+}
+
+.hero {
+  min-height: clamp(315px, 30vw, 380px);
+}
+
+.food-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+.food-card,
+.dashboard-stats > div,
+.summary-card,
+.checkout-card {
+  min-width: 0;
+}
+
+.order-foot span,
+.order-item span,
+.dashboard-stats b {
+  overflow-wrap: anywhere;
+}
+
+.modal-backdrop {
+  padding: max(12px, env(safe-area-inset-top, 0px))
+    max(12px, env(safe-area-inset-right, 0px))
+    max(12px, env(safe-area-inset-bottom, 0px))
+    max(12px, env(safe-area-inset-left, 0px));
+}
+
+.food-modal {
+  max-height: 92dvh;
+}
+
+@media (max-width: 1024px) {
+  .food-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .topbar {
+    gap: clamp(14px, 3vw, 30px);
+  }
+}
+
+@media (max-width: 850px) {
+  .topbar {
+    gap: 14px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: clamp(380px, 112vw, 440px);
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bottom-nav {
+    height: calc(70px + env(safe-area-inset-bottom, 0px));
+    padding: 0 4px env(safe-area-inset-bottom, 0px);
+  }
+
+  .bottom-nav button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .food-modal {
+    max-height: 92vh;
+    max-height: 92dvh;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar {
+    padding-inline: 12px;
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 6px;
+    font-size: 20px;
+  }
+
+  .location-pill {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .location-pill span,
+  .location-pill svg:last-child {
+    display: none;
+  }
+
+  .cart-top {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .cart-top b {
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    min-width: 16px;
+    padding: 1px 4px;
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  .top-actions {
+    gap: 6px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 300px;
+  }
+
+  .bottom-nav {
+    height: 58px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
